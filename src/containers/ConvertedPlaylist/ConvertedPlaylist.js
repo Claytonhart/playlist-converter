@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import "./ConvertedPlaylist.css";
 
 import { getSpotifySong } from "../../services/spotify/getSpotifySong";
-import { getNapsterSong } from "../../services/napster/getNapsterSong";
-import { getDeezerSong } from "../../services/deezer/getDeezerSong";
 import { getYoutubeSong } from "../../services/youtube/getYoutubeSong";
+import { getDeezerSong } from "../../services/deezer/getDeezerSong";
+import { getNapsterSong } from "../../services/napster/getNapsterSong";
 
 import { getSpotifyUserId } from "../../services/spotify/getSpotifyUserId";
 import { getDeezerUserId } from "../../services/deezer/getDeezerUserId";
@@ -21,7 +21,10 @@ import { postYoutubePlaylist } from "../../services/youtube/postYoutubePlaylist"
 import { postDeezerPlaylist } from "../../services/deezer/postDeezerPlaylist";
 import { postNapsterPlaylist } from "../../services/napster/postNapsterPlaylist";
 
-import { updateFinalPlaylist } from "../../store/actions/updateFinalPlaylist";
+import {
+	updateFinalPlaylist,
+	updateFailedToFindPlaylist
+} from "../../store/actions/updateFinalPlaylist";
 import { updateFinalPlaylistUrl } from "../../store/actions/updateFinalPlaylistUrl";
 
 class ConvertedPlaylist extends Component {
@@ -39,28 +42,31 @@ class ConvertedPlaylist extends Component {
 
 		const platformMethods = {
 			getSpotifySong: getSpotifySong,
-			getNapsterSong: getNapsterSong,
+			getYoutubeSong: getYoutubeSong,
 			getDeezerSong: getDeezerSong,
-			getYoutubeSong: getYoutubeSong
+			getNapsterSong: getNapsterSong
 		};
 
 		const platformName = this.props.playlistNames.finalPlaylist;
 		const platformMethodName = `get${platformName}Song`;
 
-		debugger;
 		let newSong = await platformMethods[platformMethodName](
 			this.state.songName,
 			this.state.artistName,
 			this.props.finalAccessToken
 		);
 
-		// let newSong = await getSpotifySong(
-		// 	this.state.songName,
-		// 	this.state.artistName,
-		// 	this.props.finalAccessToken
-		// );
+		debugger;
 
-		this.props.updateFinalPlaylist(newSong);
+		if (newSong.id) {
+			this.props.updateFinalPlaylist(newSong);
+		} else {
+			this.props.updateFailedToFindPlaylist(
+				`${this.state.songName} - ${this.staet.artistName}`
+			);
+		}
+
+		debugger;
 
 		this.setState({ artistName: "", songName: "" });
 	};
@@ -68,12 +74,12 @@ class ConvertedPlaylist extends Component {
 	createPlaylist = async (playlistName, event) => {
 		debugger;
 		switch (playlistName) {
-			case "Youtube":
-				await this.createYoutubePlaylist();
-				this.props.history.push("/uploaded");
-				break;
 			case "Spotify":
 				await this.createSpotifyPlaylist();
+				this.props.history.push("/uploaded");
+				break;
+			case "Youtube":
+				await this.createYoutubePlaylist();
 				this.props.history.push("/uploaded");
 				break;
 			case "Deezer":
@@ -87,23 +93,6 @@ class ConvertedPlaylist extends Component {
 			default:
 				console.log("No final playlist name detected?");
 		}
-	};
-
-	createYoutubePlaylist = async () => {
-		let youtubePlaylistId = await createNewYoutubePlaylist(
-			this.props.finalAccessToken,
-			this.props.finalPlaylistName
-		);
-
-		let youtubeUrl = `https://www.youtube.com/playlist?list=${youtubePlaylistId}`;
-		this.props.updateFinalPlaylistUrl(youtubeUrl);
-
-		await postYoutubePlaylist(
-			this.props.finalPlaylist,
-			this.props.finalAccessToken,
-			// "PLHodO_IJz31bI3uWq35OorlYy3KYztseJ"
-			youtubePlaylistId
-		);
 	};
 
 	createSpotifyPlaylist = async () => {
@@ -125,6 +114,23 @@ class ConvertedPlaylist extends Component {
 			this.props.finalPlaylist,
 			this.props.finalAccessToken,
 			newSpotifyApiPlaylistUrl
+		);
+	};
+
+	createYoutubePlaylist = async () => {
+		let youtubePlaylistId = await createNewYoutubePlaylist(
+			this.props.finalAccessToken,
+			this.props.finalPlaylistName
+		);
+
+		let youtubeUrl = `https://www.youtube.com/playlist?list=${youtubePlaylistId}`;
+		this.props.updateFinalPlaylistUrl(youtubeUrl);
+
+		await postYoutubePlaylist(
+			this.props.finalPlaylist,
+			this.props.finalAccessToken,
+			// "PLHodO_IJz31bI3uWq35OorlYy3KYztseJ"
+			youtubePlaylistId
 		);
 	};
 
@@ -253,5 +259,6 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, {
 	updateFinalPlaylist,
+	updateFailedToFindPlaylist,
 	updateFinalPlaylistUrl
 })(ConvertedPlaylist);

@@ -27,11 +27,14 @@ export async function getSpotifyPlaylist(
 	const { next } = data;
 	const playlist = data.items.map(item => {
 		const artistName = item.track.artists[0].name;
-		const songName = item.track.name;
+		let songName = item.track.name;
+		// Spotify returns songnames with cover names in parenthesis,
+		// remove cover names for ease of searching
+		songName = songName.replace(/ *\([^)]*\) */g, "");
 
 		return { artistName, songName };
 	});
-	// debugger;
+	debugger;
 
 	playlistHolder.push(...playlist);
 
