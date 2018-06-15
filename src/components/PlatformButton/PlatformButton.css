@@ -1,0 +1,46 @@
+.green {
+	background: green;
+}
+.red {
+	background: red;
+}
+.blue {
+	background: blue;
+}
+.orange {
+	background: orange;
+}
+
+.platform-button {
+	background: white;
+	border: 1px solid var(--theme-white);
+	flex: 1;
+	height: 60px;
+	font-size: 1.25em;
+	text-transform: uppercase;
+	padding: 0;
+}
+
+.platform-sidebar {
+	height: 60px;
+	/*width: 4px;*/
+	flex: 0.01;
+}
+
+.platform-container {
+	display: flex;
+	width: 400px;
+	margin-bottom: 10px;
+}
+
+.platform-container input {
+	outline: none;
+}
+
+.platform-button {
+	background: var(--theme-white);
+}
+
+.platform-button-active {
+	transform: translate(30px);
+}

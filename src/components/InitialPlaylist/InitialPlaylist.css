@@ -1,0 +1,4 @@
+.playlistColumn{
+	display: flex;
+	flex-direction: column;
+}

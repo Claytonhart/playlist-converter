@@ -1,0 +1,24 @@
+.platform-playlists-container {
+	display: flex;
+	justify-content: center;
+}
+
+.platform-form-container {
+	width: 80%;
+	margin: 0 auto;
+	background: #fff;
+}
+
+.platform-auth-button {
+	position: relative;
+	left: 67%;
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+	color: #fff;
+	background-color: var(--theme-blue);
+	border: none;
+	cursor: pointer;
+}
+

@@ -1,0 +1,5 @@
+/* Adds padding equal to the navbar's height to everything below it */
+.clear-navbar {
+	padding-top: 6.25em;
+	/*height: 100%;*/
+}
