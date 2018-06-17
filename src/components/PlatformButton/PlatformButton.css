@@ -1,46 +1,105 @@
 .green {
-	background: green;
+	/*border: 1px solid #07d165;*/
 }
 .red {
-	background: red;
-}
-.blue {
-	background: blue;
+	/*border: 1px solid #ff0000;*/
 }
 .orange {
-	background: orange;
+	/*border: 1px solid orange;*/
+}
+.black {
+	/*border: 1px solid black;*/
+}
+
+.background-green {
+	/*background: #07d165 !important;*/
+	background: linear-gradient(to left, #07d165 50%, #fff 50%);
+	background-size: 200% 100%;
+	background-position: left bottom;
+	/*color: #fff;*/
+	/*border: 1px solid #07d165;*/
+}
+.background-red {
+	/*background: #ff0000 !important;*/
+	background: linear-gradient(to left, #ff0000 50%, #fff 50%);
+	background-size: 200% 100%;
+	background-position: left bottom;
+	/*color: #fff;*/
+	/*border: 1px solid #ff0000;*/
+}
+.background-orange {
+	/*background: orange !important;*/
+	background: linear-gradient(to left, #02b5c8 50%, #fff 50%);
+	background-size: 200% 100%;
+	background-position: left bottom;
+	/*color: #fff;*/
+	/*border: 1px solid orange;*/
+}
+.background-black {
+	/*background: black !important;*/
+	background: linear-gradient(to left, black 50%, #fff 50%);
+	background-size: 200% 100%;
+	background-position: left bottom;
+	/*color: #fff;*/
+	/*border: 1px solid black;*/
+}
+
+.background-active {
+	background-position: right bottom;
+	color: #fff;
 }
 
 .platform-button {
-	background: white;
-	border: 1px solid var(--theme-white);
+	/*background: inherit;*/
+	/*color: inherit;*/
+	/*background: white;*/
+	/*background: var(--theme-white);*/
+	/*border: 1px solid var(--theme-white);*/
+	border: none;
 	flex: 1;
-	height: 60px;
+	/*height: 60px;*/
 	font-size: 1.25em;
 	text-transform: uppercase;
 	padding: 0;
+	margin: 0;
+	cursor: default;
 }
 
 .platform-sidebar {
-	height: 60px;
 	/*width: 4px;*/
 	flex: 0.01;
 }
 
 .platform-container {
 	display: flex;
-	width: 400px;
-	margin-bottom: 10px;
+	/* width: 400px; */
+	/*width: 25%;*/
+	margin-bottom: 20px;
+	box-shadow: 1px 1px 1px 0px rgba(158, 158, 158, 1);
+	/*padding: 20px;*/
 }
 
 .platform-container input {
 	outline: none;
 }
 
-.platform-button {
-	background: var(--theme-white);
+.platform-button-active {
+	/*transform: translate(30px);*/
+	background: blue;
 }
 
-.platform-button-active {
-	transform: translate(30px);
+.platform-button-left {
+	flex: 2.5;
+	padding: 8px 6px;
+	text-align: center;
+}
+
+.platform-button-right {
+	display: flex;
+	align-items: center;
+	flex: 8;
+	transition: all ease 0.5s;
+	text-align: center;
+	font-size: 1.1em;
+	letter-spacing: 0.05em;
 }

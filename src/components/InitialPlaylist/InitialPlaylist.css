@@ -1,4 +1,28 @@
-.playlistColumn{
+.playlist-column {
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+}
+
+.auth-button {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+	/*	color: #fff;
+	background-color: var(--theme-blue);*/
+	color: var(--theme-blue);
+	background-color: #fff;
+	cursor: pointer;
+	border: 1px solid var(--theme-blue);
+	width: 300px;
+}
+
+.playlist-column input {
+	margin-top: 10px;
+}
+
+.playlist-column-form {
 	display: flex;
 	flex-direction: column;
 }

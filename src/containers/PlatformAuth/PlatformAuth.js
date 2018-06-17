@@ -166,6 +166,10 @@ class PlatformAuth extends Component {
 				onSubmit={this.buildNewPlaylist}
 				className="platform-form-container"
 			>
+				<h1 className="convert-header">
+					Authenticate and Select Your Playlist
+				</h1>
+				<h3 className="step-one">Step: 2/3</h3>
 				<div className="platform-playlists-container">
 					<InitialPlaylist
 						authPlatform={this.authPlatform.bind(
@@ -176,6 +180,7 @@ class PlatformAuth extends Component {
 						initialAuthenticated={initialAuthenticated}
 						onInputChange={this.handleChange}
 						column={"initialPlaylistValue"}
+						labelText="Playlist id"
 						// value={this.state.value}
 					/>
 					<InitialPlaylist
@@ -187,6 +192,7 @@ class PlatformAuth extends Component {
 						initialAuthenticated={finalAuthenticated}
 						onInputChange={this.handleChange}
 						column={"finalPlaylistValue"}
+						labelText="New Playlist Name"
 						// value={this.state[`${this.props.finalPlaylistName}InputValue`]}
 					/>
 				</div>

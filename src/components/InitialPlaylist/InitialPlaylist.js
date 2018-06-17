@@ -47,7 +47,8 @@ class InitialPlaylist extends Component {
 			initialAuthenticated,
 			authPlatform,
 			playlistName,
-			column
+			column,
+			labelText
 		} = this.props;
 
 		let authButtonToRender;
@@ -58,42 +59,71 @@ class InitialPlaylist extends Component {
 					<div onClick={authPlatform}>
 						<GoogleLogin
 							clientId="765030499566-0hfptahsbp45p3pj9f5dqlj6ibot8lj6.apps.googleusercontent.com"
-							buttonText="Login"
 							scope="https://www.googleapis.com/auth/youtube.force-ssl"
 							onSuccess={this.responseYoutube.bind(this, column)}
 							onFailure={this.responseYoutube}
+							buttonText={`Authenticate ${playlistName}`}
+							className="auth-button"
 						/>
 					</div>
 				);
 				break;
 			case "Spotify":
 				authButtonToRender = (
-					<button onClick={authPlatform}>Authenticate {playlistName}</button>
+					<button className="auth-button" onClick={authPlatform}>
+						Authenticate {playlistName}
+					</button>
 				);
 				break;
 			case "Deezer":
 				authButtonToRender = (
-					<button onClick={authPlatform}>Authenticate {playlistName}</button>
+					<button className="auth-button" onClick={authPlatform}>
+						Authenticate {playlistName}
+					</button>
 				);
 			case "Napster":
 				authButtonToRender = (
-					<button onClick={authPlatform}> Authenticate {playlistName}</button>
+					<button className="auth-button" onClick={authPlatform}>
+						Authenticate {playlistName}
+					</button>
 				);
 			default:
 				console.log("Default no playlistName??");
 		}
 
 		// const inputName = `${playlistName}InputValue`;
+		// return (
+		// 	<div className="playlist-column">
+		// 		{authButtonToRender}
+		// 		{initialAuthenticated && (
+		// 			<div className="playlist-column-form">
+		// 				<input
+		// 					type="text"
+		// 					// value={this.props.value}
+		// 					onChange={this.props.onInputChange}
+		// 					name={column}
+		// 					placeholder={labelText}
+		// 				/>
+		// 			</div>
+		// 		)}
+		// 	</div>
+		// );
+
 		return (
-			<div className="playlistColumn">
-				{authButtonToRender}
-				{initialAuthenticated && (
-					<input
-						type="text"
-						// value={this.props.value}
-						onChange={this.props.onInputChange}
-						name={column}
-					/>
+			<div className="playlist-column">
+				{initialAuthenticated ? (
+					<div className="playlist-column-form">
+						<button className="auth-button">Authenticated</button>
+						<input
+							type="text"
+							// value={this.props.value}
+							onChange={this.props.onInputChange}
+							name={column}
+							placeholder={labelText}
+						/>
+					</div>
+				) : (
+					<div>{authButtonToRender}</div>
 				)}
 			</div>
 		);

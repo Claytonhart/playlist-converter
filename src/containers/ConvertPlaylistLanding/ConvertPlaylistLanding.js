@@ -38,22 +38,27 @@ class ConvertPlaylistLanding extends Component {
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit} className="convert-form">
-				<h1 className="convert-header">Convert My Playlist</h1>
+				<h1 className="convert-header">Choose Your Platforms</h1>
+				<h3 className="step-one">Step: 1/3</h3>
 				<div className="platform-list-container">
-					<label htmlFor="initialPlaylist">From</label>
-					<PlatformList
-						column="initialPlaylist"
-						platform={this.state.initialPlaylist}
-						activateButton={this.activateButton}
-					/>
-					<label htmlFor="finalPlaylist">To</label>
-					<PlatformList
-						column="finalPlaylist"
-						platform={this.state.finalPlaylist}
-						activateButton={this.activateButton}
-					/>
+					<div className="platform-list-container-left">
+						<label htmlFor="initialPlaylist">From</label>
+						<PlatformList
+							column="initialPlaylist"
+							platform={this.state.initialPlaylist}
+							activateButton={this.activateButton}
+						/>
+					</div>
+					<div className="platform-list-container-right">
+						<label htmlFor="finalPlaylist">To</label>
+						<PlatformList
+							column="finalPlaylist"
+							platform={this.state.finalPlaylist}
+							activateButton={this.activateButton}
+						/>
+					</div>
 				</div>
-				<button>Convert my playlist</button>
+				<button className="convert-submit-button">Convert my playlist</button>
 			</form>
 		);
 	}

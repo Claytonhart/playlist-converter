@@ -1,12 +1,12 @@
 import axios from "axios";
 import jsonp from "jsonp";
 
-export async function addSongsToDeezerPlaylist(youtubePlaylist, accessToken) {
+export async function addSongsToDeezerPlaylist(initialPlaylist, accessToken) {
 	let playlist = [];
 	let failedToFind = [];
 	let failedToParse = [];
 
-	for (let song of youtubePlaylist) {
+	for (let song of initialPlaylist) {
 		console.log(song);
 		if (song.hasOwnProperty("artistName")) {
 			const { artistName, songName } = song;

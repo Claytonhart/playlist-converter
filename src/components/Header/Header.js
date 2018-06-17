@@ -15,10 +15,10 @@ const Header = props => {
 						<Link to="/convert">Convert a playlist</Link>
 					</li>
 					<li>
-						<a href="">Sign Up</a>
+						<a href="#">Sign Up</a>
 					</li>
 					<li>
-						<a href="">Log In</a>
+						<a href="#">Log In</a>
 					</li>
 				</ul>
 			</div>

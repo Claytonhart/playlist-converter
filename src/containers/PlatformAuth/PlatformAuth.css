@@ -4,14 +4,17 @@
 }
 
 .platform-form-container {
+	display: flex;
+	flex-direction: column;
 	width: 80%;
 	margin: 0 auto;
 	background: #fff;
+	text-align: center;
 }
 
 .platform-auth-button {
-	position: relative;
-	left: 67%;
+	margin: 0 auto;
+	width: 400px;
 	padding: 10px 15px;
 	text-transform: uppercase;
 	text-align: center;
@@ -21,4 +24,3 @@
 	border: none;
 	cursor: pointer;
 }
-

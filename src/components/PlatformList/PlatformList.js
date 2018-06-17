@@ -3,13 +3,27 @@ import React, { Component } from "react";
 import PlatformButton from "../PlatformButton/PlatformButton";
 import "./PlatformList.css";
 
+import SpotifyIcon from "../../images/spotify.png";
+import YoutubeIcon from "../../images/youtube.png";
+import DeezerIcon from "../../images/deezer.png";
+import NapsterIcon from "../../images/napster.png";
+
 class PlatformList extends Component {
+	// state = {
+	// 	platforms: {
+	// 		Spotify: "green",
+	// 		Youtube: "red",
+	// 		Deezer: "orange",
+	// 		Napster: "blue"
+	// 	}
+	// };
+
 	state = {
 		platforms: {
-			Spotify: "green",
-			Youtube: "red",
-			Deezer: "orange",
-			Napster: "blue"
+			Spotify: { color: "green", img: SpotifyIcon },
+			Youtube: { color: "red", img: YoutubeIcon },
+			Deezer: { color: "orange", img: DeezerIcon },
+			Napster: { color: "black", img: NapsterIcon }
 		}
 	};
 
@@ -21,7 +35,7 @@ class PlatformList extends Component {
 				<PlatformButton
 					key={platform}
 					name={platform}
-					color={platforms[platform]}
+					color={platforms[platform].color}
 					activateButton={this.props.activateButton.bind(
 						this,
 						this.props.column,
@@ -29,6 +43,7 @@ class PlatformList extends Component {
 					)}
 					column={this.props.column}
 					isActive={this.props.platform === platform}
+					imageSrc={platforms[platform].img}
 				/>
 			);
 		}
