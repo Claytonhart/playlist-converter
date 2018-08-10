@@ -1,5 +1,5 @@
 import axios from "axios";
-import jsonp from "jsonp";
+// import jsonp from "jsonp";
 
 export async function addSongsToDeezerPlaylist(initialPlaylist, accessToken) {
 	let playlist = [];

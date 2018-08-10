@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import "./Uploaded.css";
 
 class Uploaded extends Component {
 	render() {
 		return (
-			<div>
+			<div className="uploaded-container">
 				<h1>Link to new playlist: </h1>
 				<a href={this.props.finalPlaylistUrl}>link</a>
 			</div>

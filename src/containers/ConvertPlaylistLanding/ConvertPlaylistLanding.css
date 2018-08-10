@@ -6,7 +6,7 @@
 	text-align: center;
 	/*max-width: 1380px;*/
 	width: 80%;
-	/*height: calc(100vh - 8.25em);*/
+	height: calc(100vh - 8.25em);
 	margin: 0 auto;
 	border-radius: 0.25em;
 }

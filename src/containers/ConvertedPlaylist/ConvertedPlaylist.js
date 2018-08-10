@@ -9,7 +9,7 @@ import { getDeezerSong } from "../../services/deezer/getDeezerSong";
 import { getNapsterSong } from "../../services/napster/getNapsterSong";
 
 import { getSpotifyUserId } from "../../services/spotify/getSpotifyUserId";
-import { getDeezerUserId } from "../../services/deezer/getDeezerUserId";
+// import { getDeezerUserId } from "../../services/deezer/getDeezerUserId";
 
 import { createNewSpotifyPlaylist } from "../../services/spotify/createNewSpotifyPlaylist";
 import { createNewYoutubePlaylist } from "../../services/youtube/createNewYoutubePlaylist";
@@ -62,7 +62,7 @@ class ConvertedPlaylist extends Component {
 			this.props.updateFinalPlaylist(newSong);
 		} else {
 			this.props.updateFailedToFindPlaylist(
-				`${this.state.songName} - ${this.staet.artistName}`
+				`${this.state.songName} - ${this.state.artistName}`
 			);
 		}
 
@@ -76,23 +76,24 @@ class ConvertedPlaylist extends Component {
 		switch (playlistName) {
 			case "Spotify":
 				await this.createSpotifyPlaylist();
-				this.props.history.push("/uploaded");
+				// this.props.history.push("/uploaded");
 				break;
 			case "Youtube":
 				await this.createYoutubePlaylist();
-				this.props.history.push("/uploaded");
+				// this.props.history.push("/uploaded");
 				break;
 			case "Deezer":
 				await this.createDeezerPlaylist();
-				this.props.history.push("/uploaded");
+				// this.props.history.push("/uploaded");
 				break;
 			case "Napster":
 				await this.createNapsterPlaylist();
-				this.props.history.push("/uploaded");
+				// this.props.history.push("/uploaded");
 				break;
 			default:
 				console.log("No final playlist name detected?");
 		}
+		this.props.history.push("/uploaded");
 	};
 
 	createSpotifyPlaylist = async () => {
@@ -214,9 +215,10 @@ class ConvertedPlaylist extends Component {
 					</div>
 				</section>
 				<section>
-					<form onSubmit={this.addSong} className="converted-playlist-input">
+					<form onSubmit={this.addSong} className="converted-playlist-form">
 						<label>Add a song</label>
 						<input
+							className="converted-playlist-input"
 							type="text"
 							placeholder="Artist Name"
 							name="artistName"
@@ -224,15 +226,22 @@ class ConvertedPlaylist extends Component {
 							onChange={this.handleChange}
 						/>
 						<input
+							className="converted-playlist-input"
 							type="text"
 							placeholder="Song Name"
 							name="songName"
 							value={this.state.songName}
 							onChange={this.handleChange}
 						/>
-						<button onClick={this.addSong}>Add Song</button>
+						<button
+							className="converted-playlist-button"
+							onClick={this.addSong}
+						>
+							Add Song
+						</button>
 					</form>
 					<button
+						className="converted-playlist-button converted-playlist-submit"
 						onClick={this.createPlaylist.bind(
 							this,
 							this.props.playlistNames.finalPlaylist

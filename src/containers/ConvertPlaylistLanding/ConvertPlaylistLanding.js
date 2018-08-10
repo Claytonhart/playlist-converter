@@ -9,7 +9,8 @@ import { updatePlaylistSelection } from "../../store/actions/playlistNames.js";
 class ConvertPlaylistLanding extends Component {
 	state = {
 		initialPlaylist: null,
-		finalPlaylist: null
+		finalPlaylist: null,
+		error: false
 	};
 
 	handleSubmit = event => {
@@ -17,10 +18,19 @@ class ConvertPlaylistLanding extends Component {
 		const { initialPlaylist, finalPlaylist } = this.state;
 		if (!initialPlaylist || !finalPlaylist) {
 			// Add an error letting user know they need to select both playlists
-			console.log("wrong");
+			this.setState({
+				error: "You need to select a playlist to convert to and from."
+			});
 		} else {
-			this.props.updatePlaylistSelection(initialPlaylist, finalPlaylist);
-			this.props.history.push(`/convert/${initialPlaylist}/${finalPlaylist}`);
+			if (initialPlaylist !== finalPlaylist) {
+				this.props.updatePlaylistSelection(initialPlaylist, finalPlaylist);
+				this.props.history.push(`/convert/${initialPlaylist}/${finalPlaylist}`);
+			} else {
+				this.setState({
+					error: "Can't convert a playlist from the same platform."
+				});
+				console.log("can't convert the same playlist");
+			}
 		}
 	};
 
@@ -40,6 +50,7 @@ class ConvertPlaylistLanding extends Component {
 			<form onSubmit={this.handleSubmit} className="convert-form">
 				<h1 className="convert-header">Choose Your Platforms</h1>
 				<h3 className="step-one">Step: 1/3</h3>
+				{this.state.error && <p style={{ color: "red" }}>{this.state.error}</p>}
 				<div className="platform-list-container">
 					<div className="platform-list-container-left">
 						<label htmlFor="initialPlaylist">From</label>

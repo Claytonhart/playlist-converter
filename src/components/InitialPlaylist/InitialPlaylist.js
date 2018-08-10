@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 
 import "./InitialPlaylist.css";
 
-import axios from "axios";
 import { GoogleLogin } from "react-google-login";
 
 import { updateInitialAccessToken } from "../../store/actions/accessToken";
@@ -81,12 +80,14 @@ class InitialPlaylist extends Component {
 						Authenticate {playlistName}
 					</button>
 				);
+				break;
 			case "Napster":
 				authButtonToRender = (
 					<button className="auth-button" onClick={authPlatform}>
 						Authenticate {playlistName}
 					</button>
 				);
+				break;
 			default:
 				console.log("Default no playlistName??");
 		}
@@ -113,7 +114,7 @@ class InitialPlaylist extends Component {
 			<div className="playlist-column">
 				{initialAuthenticated ? (
 					<div className="playlist-column-form">
-						<button className="auth-button">Authenticated</button>
+						<button className="auth-button">{playlistName}</button>
 						<input
 							type="text"
 							// value={this.props.value}

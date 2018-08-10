@@ -44,7 +44,7 @@
 	background: #fff;
 }
 
-.converted-playlist-input {
+.converted-playlist-form {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	display: flex;
@@ -54,12 +54,35 @@
 	margin: 0 auto;
 }
 
-.converted-playlist-input label {
+.converted-playlist-form label {
 	font-size: 20px;
 	font-weight: bold;
 	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 10px;
 }
 
-.converted-playlist-input input {
+.converted-playlist-form input {
 	/*width: 250px;*/
+}
+
+.converted-playlist-input {
+	margin: 3px 0;
+}
+
+.converted-playlist-button {
+	width: 400px;
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+	color: #fff;
+	background-color: var(--theme-blue);
+	border: none;
+	cursor: pointer;
+}
+
+.converted-playlist-submit {
+	position: relative;
+	left: 60%;
 }

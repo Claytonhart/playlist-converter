@@ -2,15 +2,7 @@ import React from "react";
 
 import "./PlatformButton.css";
 
-import SpotifyIcon from "../../images/spotify.png";
-import YoutubeIcon from "../../images/youtube.png";
-import DeezerIcon from "../../images/deezer.png";
-import NapsterIcon from "../../images/napster.png";
-
 const PlatformButton = props => {
-	// console.log(props.isActive);
-	// console.log(props.name);
-	const iconName = `${props.name}Icon`;
 	return (
 		<li
 			/*className={`platform-container ${props.color}${
