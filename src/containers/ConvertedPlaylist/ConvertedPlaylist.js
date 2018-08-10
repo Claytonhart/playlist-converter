@@ -240,15 +240,17 @@ class ConvertedPlaylist extends Component {
 							Add Song
 						</button>
 					</form>
-					<button
-						className="converted-playlist-button converted-playlist-submit"
-						onClick={this.createPlaylist.bind(
-							this,
-							this.props.playlistNames.finalPlaylist
-						)}
-					>
-						Create Playlist
-					</button>
+					<div className="converted-playlist-center">	
+						<button
+							className="converted-playlist-button converted-playlist-submit"
+							onClick={this.createPlaylist.bind(
+								this,
+								this.props.playlistNames.finalPlaylist
+							)}
+						>
+							Create Playlist
+						</button>
+					</div>
 				</section>
 			</div>
 		);

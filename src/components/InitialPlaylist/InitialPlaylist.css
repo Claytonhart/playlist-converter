@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	margin: 20px;
+	width: 300px;
 }
 
 .auth-button {
@@ -15,7 +16,8 @@
 	background-color: #fff;
 	cursor: pointer;
 	border: 1px solid var(--theme-blue);
-	width: 300px;
+	max-width: 300px;
+	width: 100%;
 }
 
 .playlist-column input {
@@ -25,4 +27,11 @@
 .playlist-column-form {
 	display: flex;
 	flex-direction: column;
+}
+
+@media only screen and (max-width: 400px) {
+	.playlist-column {
+		width: 100%;
+		margin: 10px 0;
+	}
 }

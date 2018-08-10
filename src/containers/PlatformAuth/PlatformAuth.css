@@ -11,11 +11,13 @@
 	background: #fff;
 	text-align: center;
 	height: calc(100vh - 8.25em);
+	box-shadow: 0 2rem 6rem rgba(0, 0, 0, .3);
 }
 
 .platform-auth-button {
 	margin: 30px auto;
-	width: 400px;
+	max-width: 400px;
+	width: 100%;
 	padding: 10px 15px;
 	text-transform: uppercase;
 	text-align: center;
@@ -24,4 +26,21 @@
 	background-color: var(--theme-blue);
 	border: none;
 	cursor: pointer;
+}
+
+@media only screen and (max-width: 400px) {
+	.platform-form-container {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.platform-playlists-container {
+		flex-direction: column;
+		margin: 0 auto;
+	}
+
+/*	.playlist-column {
+		max-width: 50%;
+	}*/
 }
