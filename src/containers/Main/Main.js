@@ -2,7 +2,6 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import "./Main.css";
-import Homepage from "../../components/Homepage/Homepage";
 import AuthPopup from "../AuthPopup/AuthPopup";
 import DeezerAuthPopup from "../../components/DeezerAuthPopup/DeezerAuthPopup";
 import NapsterAuthPopup from "../../components/NapsterAuthPopup/NapsterAuthPopup";
@@ -15,7 +14,7 @@ import NotFound from "../../components/NotFound/NotFound";
 const Main = props => (
   <div className="clear-navbar">
     <Switch>
-      <Route exact path="/" component={Homepage} />
+      <Route exact path="/" component={ConvertPlaylistLanding} />
       <Route exact path="/convert" component={ConvertPlaylistLanding} />
       <Route
         path="/convert/:initialPlaylist/:finalPlaylist"
