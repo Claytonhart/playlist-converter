@@ -1,32 +1,31 @@
 .converted-playlist-container {
-	display: flex;
-	justify-content: space-around;
-	/*background: #fff;*/
+  display: flex;
+  justify-content: space-around;
+  /*background: #fff;*/
 }
 
 .converted-playlist-container div {
-	margin-top: 20px;
-	width: 30%;
+  margin-top: 20px;
+  width: 30%;
 }
 
-
 .converted-playlist-container ul {
-	max-height: 500px;
-	overflow-y: scroll;
-	padding: 0;
+  max-height: 500px;
+  overflow-y: scroll;
+  padding: 0;
 }
 
 .converted-playlist-container ul::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 .converted-playlist-container li {
-	/*border-bottom: 1px solid lightgrey;*/
-	padding: 10px;
+  /*border-bottom: 1px solid lightgrey;*/
+  padding: 10px;
 }
 
 .converted-playlist-container li:nth-child(even) {
-	background: var(--theme-white);
+  background: var(--theme-white);
 }
 
 /*.converted-playlist-container ul:hover {
@@ -34,62 +33,58 @@
 }*/
 
 .converted-playlist-container label {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .converted-playlist-outer {
-	/*max-width: 1380px;*/
-	width: 80%;
-	margin: 0 auto;
-	/*border-radius: 0.25em;*/
-	background: #fff;
-	box-shadow: 0 2rem 6rem rgba(0, 0, 0, .3);
+  /*max-width: 1380px;*/
+  width: 80%;
+  margin: 0 auto;
+  /*border-radius: 0.25em;*/
+  background: #fff;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 }
 
 .converted-playlist-form {
-	padding-top: 50px;
-	padding-bottom: 50px;
-	display: flex;
-	flex-direction: column;
-	/*align-items: center;*/
-	max-width: 400px;
-	margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .converted-playlist-form label {
-	font-size: 20px;
-	font-weight: bold;
-	text-transform: uppercase;
-	text-align: center;
-	margin-bottom: 10px;
-}
-
-.converted-playlist-form input {
-	/*width: 250px;*/
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .converted-playlist-input {
-	margin: 3px 0;
+  margin: 3px 0;
 }
 
 .converted-playlist-button {
-	max-width: 400px;
-	width: 100%;
-	padding: 10px 15px;
-	margin-bottom: 15px;
-	text-transform: uppercase;
-	text-align: center;
-	display: inline-block;
-	color: #fff;
-	background-color: var(--theme-blue);
-	border: none;
-	cursor: pointer;
+  max-width: 400px;
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+  background-color: var(--theme-blue);
+  border: none;
+  cursor: pointer;
 }
 
 .converted-playlist-center {
-	position: relative;
-	left: 60%;
-	max-width: 400px;
+  position: relative;
+  left: 60%;
+  max-width: 400px;
 }
 
 /*.converted-playlist-submit {
@@ -97,27 +92,29 @@
 	left: 60%;
 }*/
 
-
-
-
 @media only screen and (max-width: 400px) {
-	.converted-playlist-container div {
-		width: 90%;
-	}
+  .converted-playlist-container div {
+    width: 90%;
+  }
 
-	.converted-playlist-outer {
-		/*margin: 0;*/
-		width: 100%;
-	}
+  .converted-playlist-outer {
+    /*margin: 0;*/
+    width: 100%;
+  }
+
+  .converted-playlist-form-container {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
-@media only screen and (max-width: 1300px) { 
-	.converted-playlist-center{
-		left: unset;
-		margin: 0 auto;
-	}
+@media only screen and (max-width: 1300px) {
+  .converted-playlist-center {
+    left: unset;
+    margin: 0 auto;
+  }
 
-	.converted-playlist-container div:not(:first-child){
-		display: none;
-	}
-};
+  .converted-playlist-container div:not(:first-child) {
+    display: none;
+  }
+}

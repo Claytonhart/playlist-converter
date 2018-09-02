@@ -1,0 +1,28 @@
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+  margin: 0 auto;
+  /* background-color: var(--theme-white); */
+  color: var(--theme-white);
+}
+
+.notfound-button {
+  padding: 9px 14px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  background-color: var(--theme-white);
+  color: var(--theme-blue);
+}
+
+.notfound-button a {
+  color: inherit;
+}
+
+@media only screen and (max-width: 400px) {
+  .notfound-container {
+    width: 200px;
+  }
+}

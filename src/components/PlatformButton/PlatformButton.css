@@ -1,105 +1,69 @@
-.green {
-	/*border: 1px solid #07d165;*/
-}
-.red {
-	/*border: 1px solid #ff0000;*/
-}
-.orange {
-	/*border: 1px solid orange;*/
-}
-.black {
-	/*border: 1px solid black;*/
-}
-
 .background-green {
-	/*background: #07d165 !important;*/
-	background: linear-gradient(to left, #07d165 50%, #fff 50%);
-	background-size: 200% 100%;
-	background-position: left bottom;
-	/*color: #fff;*/
-	/*border: 1px solid #07d165;*/
+  background: linear-gradient(to left, #07d165 50%, #fff 50%);
+  background-size: 201% 100%;
+  background-position: left bottom;
 }
 .background-red {
-	/*background: #ff0000 !important;*/
-	background: linear-gradient(to left, #ff0000 50%, #fff 50%);
-	background-size: 200% 100%;
-	background-position: left bottom;
-	/*color: #fff;*/
-	/*border: 1px solid #ff0000;*/
+  background: linear-gradient(to left, #ff0000 50%, #fff 50%);
+  background-size: 201% 100%;
+  background-position: left bottom;
 }
 .background-orange {
-	/*background: orange !important;*/
-	background: linear-gradient(to left, #02b5c8 50%, #fff 50%);
-	background-size: 200% 100%;
-	background-position: left bottom;
-	/*color: #fff;*/
-	/*border: 1px solid orange;*/
+  background: linear-gradient(to left, #02b5c8 50%, #fff 50%);
+  background-size: 201% 100%;
+  background-position: left bottom;
 }
 .background-black {
-	/*background: black !important;*/
-	background: linear-gradient(to left, black 50%, #fff 50%);
-	background-size: 200% 100%;
-	background-position: left bottom;
-	/*color: #fff;*/
-	/*border: 1px solid black;*/
+  background: linear-gradient(to left, black 50%, #fff 50%);
+  background-size: 201% 100%;
+  background-position: left bottom;
 }
 
 .background-active {
-	background-position: right bottom;
-	color: #fff;
+  background-position: right bottom;
+  color: #fff;
 }
 
 .platform-button {
-	/*background: inherit;*/
-	/*color: inherit;*/
-	/*background: white;*/
-	/*background: var(--theme-white);*/
-	/*border: 1px solid var(--theme-white);*/
-	border: none;
-	flex: 1;
-	/*height: 60px;*/
-	font-size: 1.25em;
-	text-transform: uppercase;
-	padding: 0;
-	margin: 0;
-	cursor: default;
+  border: none;
+  flex: 1;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  cursor: default;
 }
 
 .platform-sidebar {
-	/*width: 4px;*/
-	flex: 0.01;
+  flex: 0.01;
 }
 
 .platform-container {
-	display: flex;
-	/* width: 400px; */
-	/*width: 25%;*/
-	margin-bottom: 20px;
-	box-shadow: 1px 1px 1px 0px rgba(158, 158, 158, 1);
-	/*padding: 20px;*/
+  display: flex;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 1px 0px rgba(158, 158, 158, 1);
 }
 
 .platform-container input {
-	outline: none;
+  outline: none;
 }
 
 .platform-button-active {
-	/*transform: translate(30px);*/
-	background: blue;
+  background: blue;
 }
 
 .platform-button-left {
-	flex: 2.5;
-	padding: 8px 6px;
-	text-align: center;
+  flex: 2.5;
+  padding: 8px 6px;
+  text-align: center;
 }
 
 .platform-button-right {
-	display: flex;
-	align-items: center;
-	flex: 8;
-	transition: all ease 0.5s;
-	text-align: center;
-	font-size: 1.1em;
-	letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  flex: 8;
+  transition: all ease 0.5s;
+  text-align: center;
+  font-size: 1.1em;
+  letter-spacing: 0.05em;
 }

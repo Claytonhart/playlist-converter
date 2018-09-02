@@ -10,23 +10,25 @@ import ConvertPlaylistLanding from "../ConvertPlaylistLanding/ConvertPlaylistLan
 import PlatformAuth from "../PlatformAuth/PlatformAuth";
 import ConvertedPlaylist from "../ConvertedPlaylist/ConvertedPlaylist";
 import Uploaded from "../Uploaded/Uploaded";
+import NotFound from "../../components/NotFound/NotFound";
 
 const Main = props => (
-	<div className="clear-navbar">
-		<Switch>
-			<Route exact path="/" component={Homepage} />
-			<Route exact path="/convert" component={ConvertPlaylistLanding} />
-			<Route
-				path="/convert/:initialPlaylist/:finalPlaylist"
-				component={PlatformAuth}
-			/>
-			<Route path="/auth/deezer" component={DeezerAuthPopup} />
-			<Route path="/auth/napster" component={NapsterAuthPopup} />
-			<Route path="/auth" component={AuthPopup} />
-			<Route path="/converted" component={ConvertedPlaylist} />
-			<Route path="/uploaded" component={Uploaded} />
-		</Switch>
-	</div>
+  <div className="clear-navbar">
+    <Switch>
+      <Route exact path="/" component={Homepage} />
+      <Route exact path="/convert" component={ConvertPlaylistLanding} />
+      <Route
+        path="/convert/:initialPlaylist/:finalPlaylist"
+        component={PlatformAuth}
+      />
+      <Route path="/auth/deezer" component={DeezerAuthPopup} />
+      <Route path="/auth/napster" component={NapsterAuthPopup} />
+      <Route path="/auth" component={AuthPopup} />
+      <Route path="/converted" component={ConvertedPlaylist} />
+      <Route path="/uploaded" component={Uploaded} />
+      <Route component={NotFound} />
+    </Switch>
+  </div>
 );
 
 export default Main;
