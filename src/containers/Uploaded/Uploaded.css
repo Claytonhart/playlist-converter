@@ -1,7 +1,22 @@
 .uploaded-container {
-	width: 80%;
-	margin: 0 auto;
-	border-radius: 0.25em;
-	background: #fff;
-	text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 0.25em;
+  background: #fff;
+  text-align: center;
+}
+
+.uploaded-container h1 {
+  font-size: 1.8rem;
+}
+
+.uploaded-container a {
+  background: var(--theme-blue);
+  color: #fff;
+  padding: 9px 14px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: block;
+  width: 70px;
 }

@@ -198,6 +198,10 @@ class ConvertedPlaylist extends Component {
 
     return (
       <div className="converted-playlist-outer">
+        <div className="converted-playlist-title">
+          <h1>Finish Adding Songs</h1>
+          <h3 className="step-three">Step: 3/3</h3>
+        </div>
         <section className="converted-playlist-container">
           <div>
             <label>Songs successfully converted ({finalPlaylist.length})</label>
@@ -217,22 +221,31 @@ class ConvertedPlaylist extends Component {
         <section className="converted-playlist-form-container">
           <form onSubmit={this.addSong} className="converted-playlist-form">
             <label>Add a song</label>
-            <input
-              className="converted-playlist-input"
-              type="text"
-              placeholder="Artist Name"
-              name="artistName"
-              value={this.state.artistName}
-              onChange={this.handleChange}
-            />
-            <input
-              className="converted-playlist-input"
-              type="text"
-              placeholder="Song Name"
-              name="songName"
-              value={this.state.songName}
-              onChange={this.handleChange}
-            />
+            <div className="converted-playlist-input-container">
+              <input
+                className="converted-playlist-input"
+                type="text"
+                // placeholder="Artist Name"
+                name="artistName"
+                value={this.state.artistName}
+                onChange={this.handleChange}
+                required
+              />
+
+              <label className="converted-playlist-label">Artist Name</label>
+            </div>
+            <div className="converted-playlist-input-container">
+              <input
+                className="converted-playlist-input"
+                type="text"
+                // placeholder="Song Name"
+                name="songName"
+                value={this.state.songName}
+                onChange={this.handleChange}
+                required
+              />
+              <label className="converted-playlist-label">Song Name</label>
+            </div>
             <button
               className="converted-playlist-button"
               onClick={this.addSong}

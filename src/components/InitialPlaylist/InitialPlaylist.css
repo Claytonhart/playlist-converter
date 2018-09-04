@@ -1,37 +1,70 @@
 .playlist-column {
-	display: flex;
-	flex-direction: column;
-	margin: 20px;
-	width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 300px;
 }
 
 .auth-button {
-	padding: 10px 15px;
-	text-transform: uppercase;
-	text-align: center;
-	display: block;
-	/*	color: #fff;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  /*	color: #fff;
 	background-color: var(--theme-blue);*/
-	color: var(--theme-blue);
-	background-color: #fff;
-	cursor: pointer;
-	border: 1px solid var(--theme-blue);
-	max-width: 300px;
-	width: 100%;
-}
-
-.playlist-column input {
-	margin-top: 10px;
+  color: var(--theme-blue);
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px solid var(--theme-blue);
+  max-width: 300px;
+  width: 100%;
 }
 
 .playlist-column-form {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.playlist-column input {
+  margin-top: 45px;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+  outline: none;
+}
+
+.auth-label {
+  margin-top: 10px;
+  text-align: start;
+  text-transform: uppercase;
+  color: #999;
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 4px;
+  transition: 0.2s ease all;
+  pointer-events: none;
+}
+
+.playlist-column-form input:focus ~ label,
+.playlist-column-form input:valid ~ label {
+  bottom: 50px;
+  font-size: 14px;
+  color: #5264ae;
+  outline: none;
+}
+
+.playlist-column-form input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset;
 }
 
 @media only screen and (max-width: 400px) {
-	.playlist-column {
-		width: 100%;
-		margin: 10px 0;
-	}
+  .playlist-column {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
