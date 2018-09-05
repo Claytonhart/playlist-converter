@@ -16,9 +16,10 @@ import { napsterAuth } from "../../services/napster/napsterAuth";
 import { getNapsterAuthTokenFromCode } from "../../services/napster/getNapsterAuthTokenFromCode";
 
 import InitialPlaylist from "../../components/InitialPlaylist/InitialPlaylist";
+import LoadingModal from "../../components/LoadingModal/LoadingModal";
 
 class PlatformAuth extends Component {
-  state = {};
+  state = { show: false };
   componentDidMount() {
     // window.addEventListener("message", this.recieveMessage, false);
   }
@@ -42,6 +43,7 @@ class PlatformAuth extends Component {
     // Only fires on message events sent from /auth to prevent redux actions
     // from triggering the event *change*
     if (
+      // event.source.location.host === http://localhost:3000
       event.origin === "http://localhost:3000" &&
       event.source.location.pathname === "/auth" &&
       name === "Spotify"
@@ -121,6 +123,7 @@ class PlatformAuth extends Component {
 
   buildNewPlaylist = async event => {
     event.preventDefault();
+    this.toggleModal();
     this.props.updateFinalPlaylistName(this.state.finalPlaylistValue);
     debugger;
     await this.props.buildNewPlaylist(
@@ -157,6 +160,10 @@ class PlatformAuth extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  toggleModal = () => {
+    this.setState({ show: !this.state.show });
+  };
+
   render() {
     const initialAuthenticated = this.state[this.props.initialPlaylistName];
     const finalAuthenticated = this.state[this.props.finalPlaylistName];
@@ -166,6 +173,9 @@ class PlatformAuth extends Component {
         onSubmit={this.buildNewPlaylist}
         className="platform-form-container"
       >
+        <LoadingModal show={this.state.show} close={this.toggleModal}>
+          <h1>Fetching Your Songs</h1>
+        </LoadingModal>
         <h1 className="convert-header">
           Authenticate and Select Your Playlist
         </h1>
