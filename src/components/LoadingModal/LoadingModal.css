@@ -30,8 +30,9 @@
   display: block;
   padding: 5px;
   position: absolute;
-  top: 0px;
-  right: 5px;
+  top: -5px;
+  right: 7px;
+  font-size: 1.8rem;
 }
 
 .lds-ring {

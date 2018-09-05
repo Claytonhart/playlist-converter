@@ -10,7 +10,7 @@ const LoadingModal = props => {
     <div className="modal">
       <div className="modal-container">
         <a className="modal-close" onClick={close}>
-          x
+          ×
         </a>
         {children}
         <div className="lds-ring">
