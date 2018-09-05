@@ -27,10 +27,13 @@ import {
 } from "../../store/actions/updateFinalPlaylist";
 import { updateFinalPlaylistUrl } from "../../store/actions/updateFinalPlaylistUrl";
 
+import LoadingModal from "../../components/LoadingModal/LoadingModal";
+
 class ConvertedPlaylist extends Component {
   state = {
     artistName: "",
-    songName: ""
+    songName: "",
+    show: false
   };
 
   handleChange = event => {
@@ -72,7 +75,7 @@ class ConvertedPlaylist extends Component {
   };
 
   createPlaylist = async (playlistName, event) => {
-    debugger;
+    this.toggleModal();
     switch (playlistName) {
       case "Spotify":
         await this.createSpotifyPlaylist();
@@ -179,6 +182,10 @@ class ConvertedPlaylist extends Component {
     );
   };
 
+  toggleModal = () => {
+    this.setState({ show: !this.state.show });
+  };
+
   render() {
     let finalPlaylist = this.props.finalPlaylist.map((songName, index) => {
       return <li key={index}>{songName.title}</li>;
@@ -265,6 +272,9 @@ class ConvertedPlaylist extends Component {
             </button>
           </div>
         </section>
+        <LoadingModal show={this.state.show} close={this.toggleModal}>
+          <h1>Building Your Playlist</h1>
+        </LoadingModal>
       </div>
     );
   }
