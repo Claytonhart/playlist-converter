@@ -42,10 +42,20 @@ class PlatformAuth extends Component {
     const { code } = event.data;
     // Only fires on message events sent from /auth to prevent redux actions
     // from triggering the event *change*
+    console.log("spotify message");
+    console.log(event.source.location.host);
+    console.log(event.origin);
+    console.log(event.source.location.pathname);
+    console.log(name);
+    console.log(
+      event.origin === "https://claytonhart.github.io" &&
+        event.source.location.pathname === "/playlist-converter/auth" &&
+        name === "Spotify"
+    );
     if (
-      // event.source.location.host === http://www.claytonhart.me
-      event.origin === "http://www.claytonhart.me" &&
-      event.source.location.pathname === "/auth" &&
+      // event.source.location.host === https://claytonhart.github.io
+      event.origin === "https://claytonhart.github.io" &&
+      event.source.location.pathname === "/playlist-converter/auth" &&
       name === "Spotify"
     ) {
       if (this.props.initialPlaylistName === "Spotify") {

@@ -57,6 +57,7 @@ class InitialPlaylist extends Component {
         authButtonToRender = (
           <div onClick={authPlatform}>
             <GoogleLogin
+              // redirectUri="https://claytonhart.github.io/playlist-converter"
               clientId="765030499566-0hfptahsbp45p3pj9f5dqlj6ibot8lj6.apps.googleusercontent.com"
               // scope="https://www.googleapis.com/auth/youtube.force-ssl"
               onSuccess={this.responseYoutube.bind(this, column)}

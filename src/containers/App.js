@@ -9,18 +9,18 @@ import Navbar from "../components/Header/Header";
 const store = configureStore();
 
 class App extends Component {
-	render() {
-		return (
-			<Provider store={store}>
-				<Router>
-					<div className="app-container">
-						<Navbar />
-						<Main />
-					</div>
-				</Router>
-			</Provider>
-		);
-	}
+  render() {
+    return (
+      <Provider store={store}>
+        <Router basename={process.env.PUBLIC_URL}>
+          <div className="app-container">
+            <Navbar />
+            <Main />
+          </div>
+        </Router>
+      </Provider>
+    );
+  }
 }
 
 export default App;

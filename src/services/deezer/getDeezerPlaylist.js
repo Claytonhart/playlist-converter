@@ -12,7 +12,7 @@ export async function getDeezerPlaylist(
 	// const config = {
 	// 	headers: {
 	// 		Authorization: `Bearer ${accessToken}`,
-	// 		"Access-Control-Allow-Origin": "http://www.claytonhart.me"
+	// 		"Access-Control-Allow-Origin": "https://claytonhart.github.io"
 	// 	}
 	// };
 
