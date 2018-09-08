@@ -43,8 +43,8 @@ class PlatformAuth extends Component {
     // Only fires on message events sent from /auth to prevent redux actions
     // from triggering the event *change*
     if (
-      // event.source.location.host === http://localhost:3000
-      event.origin === "http://localhost:3000" &&
+      // event.source.location.host === http://www.claytonhart.me
+      event.origin === "http://www.claytonhart.me" &&
       event.source.location.pathname === "/auth" &&
       name === "Spotify"
     ) {

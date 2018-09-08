@@ -13,7 +13,7 @@ class NapsterAuthPopup extends Component {
 
 		targetWindow.postMessage(
 			{ code, name: "Napster" },
-			"http://localhost:3000/convert/Napster/Youtube"
+			"http://www.claytonhart.me/convert/Napster/Youtube"
 		);
 
 		window.close();

@@ -58,7 +58,7 @@ class InitialPlaylist extends Component {
           <div onClick={authPlatform}>
             <GoogleLogin
               clientId="765030499566-0hfptahsbp45p3pj9f5dqlj6ibot8lj6.apps.googleusercontent.com"
-              scope="https://www.googleapis.com/auth/youtube.force-ssl"
+              // scope="https://www.googleapis.com/auth/youtube.force-ssl"
               onSuccess={this.responseYoutube.bind(this, column)}
               onFailure={this.responseYoutube}
               buttonText={`Authenticate ${playlistName}`}

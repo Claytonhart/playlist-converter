@@ -14,7 +14,7 @@ export async function getNapsterPlaylist(
 	// const config = {
 	// 	headers: {
 	// 		Authorization: `Bearer ${accessToken}`,
-	// 		"Access-Control-Allow-Origin": "http://localhost:3000"
+	// 		"Access-Control-Allow-Origin": "http://www.claytonhart.me"
 	// 	}
 	// };
 

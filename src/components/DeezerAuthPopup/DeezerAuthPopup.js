@@ -14,7 +14,7 @@ class AuthPopup extends Component {
 		console.log(access_token);
 		targetWindow.postMessage(
 			{ access_token, name: "Deezer" },
-			"http://localhost:3000/convert/Deezer/Youtube"
+			"http://www.claytonhart.me/convert/Deezer/Youtube"
 		);
 		debugger;
 		window.close();

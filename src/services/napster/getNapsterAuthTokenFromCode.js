@@ -11,7 +11,7 @@ export async function getNapsterAuthTokenFromCode(passedCode) {
 		client_secret: api_secret,
 		response_type: "code",
 		grant_type: "authorization_code",
-		redirect_uri: "http://localhost:3000/auth/napster",
+		redirect_uri: "http://www.claytonhart.me/auth/napster",
 		code: passedCode
 	};
 

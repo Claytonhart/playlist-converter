@@ -2,7 +2,7 @@ export function napsterAuth(initialPlaylist) {
 	const apiKey = "ZjFjM2E5MTYtMTY2ZS00N2U0LWFkYTQtMGFkODZiYTZiMGQy";
 	const urlString = `https://api.napster.com/oauth/authorize?
 		client_id=${apiKey}&
-		redirect_uri=http://localhost:3000/auth/napster&
+		redirect_uri=http://www.claytonhart.me/auth/napster&
 		response_type=code`;
 
 	const name = `${initialPlaylist}_Auth`;

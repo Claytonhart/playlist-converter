@@ -2,7 +2,7 @@ export function spotifyAuth(initialPlaylist) {
 	const url = {
 		authEndpoint: "https://accounts.spotify.com/authorize/",
 		client_id: "ff95d3ccaa6b43b6aa80410010f6072a",
-		redirect_uri: `http://localhost:3000/auth`,
+		redirect_uri: `http://www.claytonhart.me/auth`,
 		scope: "playlist-modify-public playlist-modify-private"
 	};
 	const { authEndpoint, client_id, redirect_uri, scope } = url;

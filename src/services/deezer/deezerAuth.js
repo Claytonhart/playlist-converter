@@ -2,12 +2,12 @@ export function deezerAuth(initialPlaylist) {
 	const url = {
 		authEndpoint: "https://connect.deezer.com/oauth/auth.php",
 		app_id: 283344,
-		redirect_uri: `http://localhost:3000/auth/deezer`,
+		redirect_uri: `http://www.claytonhart.me/auth/deezer`,
 		perms: "manage_library,offline_access"
 
 		// `https://connect.deezer.com/oauth/auth.php?
 		// app_id=283344&
-		// redirect_uri=http://localhost:3000/auth/deezer&
+		// redirect_uri=http://www.claytonhart.me/auth/deezer&
 		// perms=basic_access,manage_library`
 	};
 	const { authEndpoint, app_id, redirect_uri, perms } = url;
